@@ -23,12 +23,19 @@ body {
     background-color: $error-text !important;
     border-radius: 5px !important;
     color: $off-white !important;
+    margin: auto !important ;
+    width: 200px !important;
+    padding: 20px !important;
 }
 
 .toast-valid {
     background-color: $success-text !important;
     border-radius: 5px !important;
     color: $off-white !important;
+    margin: auto !important ;
+    width: 200px !important;
+    padding: 20px !important;
+   
 }
 
 .disable {

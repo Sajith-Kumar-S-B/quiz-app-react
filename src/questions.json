@@ -5,7 +5,8 @@
         "optionB": "25 degrees Celcius",
         "optionC": "100 degrees Celcius",
         "optionD": "150 degrees Celcius",
-        "answer": "100 degrees Celcius"
+        "answer": "100 degrees Celcius",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -14,7 +15,8 @@
         "optionB": "William Shakespeare",
         "optionC": "Ngozi Chimamanda Adichie",
         "optionD": "Dan Brown",
-        "answer": "William Shakespeare"
+        "answer": "William Shakespeare",
+        "hintsMessage": "Hint: This city is known for Tower."
     },
 
     {
@@ -23,7 +25,8 @@
         "optionB": "A Computer",
         "optionC": "A pair of shoes",
         "optionD": "Alarm Clock",
-        "answer": "Alarm Clock"
+        "answer": "Alarm Clock",
+        "hintsMessage": "Hint: This city is known for Tower."
     },
 
     {
@@ -32,7 +35,8 @@
         "optionB": "Elephant",
         "optionC": "Goat",
         "optionD": "Lion",
-        "answer": "Elephant"
+        "answer": "Elephant",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -41,7 +45,8 @@
         "optionB": "Morgan Freeman",
         "optionC": "Sherlock Holmes",
         "optionD": "Samuel L. Jackson",
-        "answer": "Sherlock Holmes"
+        "answer": "Sherlock Holmes",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -50,7 +55,8 @@
         "optionB": "Blue and Red",
         "optionC": "Green and White",
         "optionD": "Black and White",
-        "answer": "Black and White"
+        "answer": "Black and White",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -59,7 +65,8 @@
         "optionB": "The Ear",
         "optionC": "The Legs",
         "optionD": "The Hands",
-        "answer": "The Ear"
+        "answer": "The Ear",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -68,7 +75,8 @@
         "optionB": "10",
         "optionC": "10,000",
         "optionD": "1,000,000",
-        "answer": "100"
+        "answer": "100",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -77,7 +85,8 @@
         "optionB": "Horse racing",
         "optionC": "Street Racing",
         "optionD": "Arm Wrestling",
-        "answer": "Horse racing"
+        "answer": "Horse racing",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -86,7 +95,8 @@
         "optionB": "Sir Isaac Newton",
         "optionC": "Leonardo Da Vinci",
         "optionD": "Albert Einstein",
-        "answer": "Leonardo Da Vinci"
+        "answer": "Leonardo Da Vinci",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -95,7 +105,8 @@
         "optionB": "The Dictionary",
         "optionC": "The Bible",
         "optionD": "The Chemistry text Book",
-        "answer": "The Koran"
+        "answer": "The Koran",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -104,7 +115,8 @@
         "optionB": "San Francisco",
         "optionC": "Abuja",
         "optionD": "Syndey",
-        "answer": "Addis Ababa"
+        "answer": "Addis Ababa",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -113,7 +125,8 @@
         "optionB": "64",
         "optionC": "32",
         "optionD": "256",
-        "answer": "64"
+        "answer": "64",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -122,7 +135,8 @@
         "optionB": "Barack Obama",
         "optionC": "Wole Soyinka",
         "optionD": "Thomas Edison",
-        "answer": "Thomas Edison"
+        "answer": "Thomas Edison",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     },
 
     {
@@ -131,6 +145,7 @@
         "optionB": "Again Jesus asked",
         "optionC": "In the beginning",
         "optionD": "At that time",
-        "answer": "In the beginning"
+        "answer": "In the beginning",
+        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
     }
 ]

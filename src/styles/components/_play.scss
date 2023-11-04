@@ -2,9 +2,11 @@
 
 .questions {
     background-color: $off-white;
-    width: 70%;
+    width: 50%;
     margin: $xlg auto 0 auto;
     padding: $sm $md;
+    border-top: 0;
+    position: relative;
 
     h2 {
         text-align: center;
@@ -16,9 +18,20 @@
         justify-content: space-between;
     }
 
+
+    .timer-container {
+        display: flex;
+        justify-content: space-between;
+    }
     .lifeline {
         position: relative;
         top: -3px;
+    }
+
+
+    .right{
+        display: inline-flex;
+        align-items: center;
     }
 
     .lifeline-icon {
@@ -58,6 +71,30 @@
     .option:hover {
         background-color: darken($blue, 20%);
     }
+  
+
+    .correct-option {
+        background-color: green;
+        color: white; /* Optionally change the text color */
+      }
+
+      .wrong-option {
+        background-color: red;
+        color: white; /* Optionally change the text color */
+      }
+    
+    
+
+    
+}
+
+
+.timeline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0; /* Initial width is 0 */
+    border-top: 3px solid red; /* Style and color of the timeline */
 }
 
 .button-container {
@@ -106,3 +143,5 @@
 .button-container button:last-child:hover {
     background-color: darken($red, 10%);
 }
+
+
