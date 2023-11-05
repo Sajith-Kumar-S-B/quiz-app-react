@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiCheckCircle,mdiBrightness7,mdiBrightness3  } from '@mdi/js';
-import imgCircle from '../../assets/7efs.gif'
+import imgCircle from '../../assets/7efs-unscreen.gif'
 const QuizSummary = () => {
     const location = useLocation();
     const { state } = location;
