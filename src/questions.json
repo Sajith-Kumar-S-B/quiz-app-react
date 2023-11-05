@@ -81,8 +81,8 @@
 
     {
         "question": "In one-way binding, where is the source of truth for the data?",
-        "optionA": " Child components",
-        "optionB": " Parent components",
+        "optionA": "Child components",
+        "optionB": "Parent components",
         "optionC": "External API",
         "optionD": "Redux store",
         "answer": "Parent components",
