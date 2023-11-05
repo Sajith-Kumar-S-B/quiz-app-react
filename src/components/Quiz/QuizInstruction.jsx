@@ -21,7 +21,7 @@ function QuizInstruction() {
       <Helmet><title>Quiz Instructions - Quiz App</title></Helmet>
         <div className={`rules ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
         <div className='mode' onClick={toggleMode} >
-                      {isDarkMode ? <Icon className='icon' path={mdiBrightness7} size={1} style={{color:'white'}} /> :  <Icon className='icon' path={mdiBrightness3} size={1} style={{color:'black'}} />}
+                      {isDarkMode ? <i style={{color:'white'}} className="fa-solid fa-sun"></i> :  <i style={{color:'black'}} className="fa-regular fa-moon"></i>}
         
                       </div>
             <div className='instructions container' >
@@ -64,9 +64,9 @@ function QuizInstruction() {
                        
                     <img src={img4} alt="Quiz App hints example" />
                     </li>
-                    <li>Feel free to quit (or retire from) the game at any time. In that case your score will be revealed afterwards.</li>
+                    <li>Quit the game at any time. It will lead to the home page.</li>
                     <li>The timer starts as soon as the game loads.</li>
-                    <li>Let's do this if you think you've got what it takes?</li>
+                    <li>If you are ready click continue to begin.</li>
                 </ul>
                 <div className='decision'>
                     <span className="left"><Link style={{textDecoration:'none',color:'white'}} to="/">Not Ready</Link></span>

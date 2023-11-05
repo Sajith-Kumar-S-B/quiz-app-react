@@ -9,8 +9,8 @@ import { mdiLightbulbOn10 } from '@mdi/js';
 import { mdiClockOutline } from '@mdi/js';
 import { mdiHeartHalfFull,mdiBrightness7,mdiBrightness3  } from '@mdi/js';
 import correctNotification from '../../assets/audio/src_assets_audio_correct-answer.mp3';
-import wrongNotification from '../../assets/audio/src_assets_audio_wrong-answer.mp3';
-import buttonSound from '../../assets/audio/src_assets_audio_button-sound.mp3';
+import wrongNotification from '../../assets/audio/error.mp3';
+import buttonSound from '../../assets/audio/next.mp3';
 import { useNavigate } from 'react-router-dom';
 
 const Play = (props) => {
@@ -39,12 +39,12 @@ const Play = (props) => {
             seconds: 0,
         }
     });
+
     const timerInterval = useRef(null); 
     const navigate = useNavigate();
     const correctSound = useRef(new Audio(correctNotification));
     const wrongSound = useRef(new Audio(wrongNotification));
     const buttonSoundRef = useRef(new Audio(buttonSound));
-
     let interval;
 
     useEffect(() => {
@@ -160,7 +160,7 @@ const Play = (props) => {
             M.toast({
                 html:  currentQuestion.hintsMessage,
                 classes: 'toast-hint',
-                displayLength: 1500,
+                displayLength: 3000,
             });
     
             // Decrease the available hints by 1
@@ -259,7 +259,7 @@ const Play = (props) => {
     };
 
     const wrongAnswer = () => {
-        navigator.vibrate(1000);
+       
         M.toast({
             html: 'Wrong Answer!',
             classes: 'toast-invalid',
@@ -272,7 +272,7 @@ const Play = (props) => {
         }));
       setTimeout(()=>{
         handleNextButtonClick();
-      },3000)
+      },2000)
     };
 
     const handleQuitButtonClick = () => {
@@ -389,7 +389,7 @@ const Play = (props) => {
             </Helmet>
              <div className={`quiz-div ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
                   <div className='mode' onClick={toggleMode} >
-                  {isDarkMode ? <Icon path={mdiBrightness7} size={1} style={{color:'white'}} /> :  <Icon path={mdiBrightness3} size={1} style={{color:'black'}} />}
+                  {isDarkMode ? <i style={{color:'white'}} className="fa-solid fa-sun"></i> : <i className="fa-regular fa-moon"></i>}
     
                   </div>
                         <div className="questions" id="questions-container" >

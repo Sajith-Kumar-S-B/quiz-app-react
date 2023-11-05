@@ -15,13 +15,7 @@
         
     }
 
-    .mode .icon{
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        background-color: var(--clr-mode);
-        padding: 2px;
-    }
+   
 
 
     .instructions {
@@ -72,8 +66,9 @@
     
         .decision span{
             padding:$xs $normal;
-            border-radius: $lg;
+            border-radius: 3px;
             box-shadow: $shadow;
+            font-size:small;
     
         }
 
@@ -113,7 +108,7 @@
             .decision span{
                 justify-content: space-between;
                 padding: 5px 10px;
-                font-size: $normal;
+                font-size: smaller;
 
             }
         }

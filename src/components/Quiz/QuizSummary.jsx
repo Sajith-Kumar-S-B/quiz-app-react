@@ -3,41 +3,53 @@ import { Helmet } from 'react-helmet';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiCheckCircle,mdiBrightness7,mdiBrightness3  } from '@mdi/js';
-import imgCircle from '../../assets/7efs-unscreen.gif'
+import imgCircle from '../../assets/7efs-unscreen.gif';
+import Confetti from 'react-confetti';
+
 const QuizSummary = () => {
     const location = useLocation();
     const { state } = location;
 
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [showConfetti, setShowConfetti] = useState(false);
 
     const toggleMode = () => {
       setIsDarkMode(!isDarkMode);
     };
 
     const calculateRemark = (score) => {
-        if (score <= 30) {
-            return 'You need more practice!';
-        } else if (score > 30 && score <= 50) {
-            return 'Better luck next time!';
-        } else if (score <= 70 && score > 50) {
-            return 'You can do better!';
-        } else if (score >= 71 && score <= 84) {
-            return 'You did great!';
+        if (score === 100) {
+            return "You're a genius!";
+        } else if (score >= 71) {
+            return "You did great!";
+        } else if (score >= 50) {
+            return "You can do better!";
+        } else if (score >= 30) {
+            return "Better luck next time!";
         } else {
-            return 'You\'re an absolute genius!';
+            return "You need more practice!";
         }
     };
 
-    useEffect(() => {
-        // You can perform any side effects here if needed.
-    }, []);
+   
 
     const userScore = state ? (state.numberOfQuestions === 0)
         ? 0 : (state.score / state.numberOfQuestions) * 100 : 0;
     const remark = calculateRemark(userScore);
 
+
+    useEffect(() => {
+        if(userScore>=71){
+            setShowConfetti(true)
+            setTimeout(() => {
+              setShowConfetti(false);
+            }, 5000);
+        }
+    }, [userScore]);
+
     const stats = state ? (
         <div>
+            {showConfetti && <Confetti />}
             <div style={{ textAlign: 'center' }}>
                 <span className="success-icon">
                <img width={'200px'}  src={imgCircle} alt="tick" />
@@ -99,7 +111,7 @@ const QuizSummary = () => {
             </Helmet>
            <div  className={`summary ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
                 <div className='mode' onClick={toggleMode} >
-                      {isDarkMode ? <Icon path={mdiBrightness7} size={1} style={{color:'white'}} /> :  <Icon path={mdiBrightness3} size={1} style={{color:'black'}} />}
+                      {isDarkMode ? <i style={{color:'white'}} className="fa-solid fa-sun"></i>:  <i style={{color:'black'}} className="fa-regular fa-moon"></i>}
         
                       </div>
                 <div className='quiz-summary'>
