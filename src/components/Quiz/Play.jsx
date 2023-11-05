@@ -7,13 +7,18 @@ import isEmpty from '../../utils/is-empty';
 import Icon from '@mdi/react';
 import { mdiLightbulbOn10 } from '@mdi/js';
 import { mdiClockOutline } from '@mdi/js';
-import { mdiHeartHalfFull } from '@mdi/js';
+import { mdiHeartHalfFull,mdiBrightness7,mdiBrightness3  } from '@mdi/js';
 import correctNotification from '../../assets/audio/src_assets_audio_correct-answer.mp3';
 import wrongNotification from '../../assets/audio/src_assets_audio_wrong-answer.mp3';
 import buttonSound from '../../assets/audio/src_assets_audio_button-sound.mp3';
 import { useNavigate } from 'react-router-dom';
 
 const Play = (props) => {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const toggleMode = () => {
+      setIsDarkMode(!isDarkMode);
+    };
     const [state, setState] = useState({
         questions,
         currentQuestion: {},
@@ -79,19 +84,27 @@ const Play = (props) => {
       
 
 
-    const handleNextButtonClick = () => {
+      const handleNextButtonClick = () => {
         playButtonSound();
-        clearCorrectOptionClass()
+        clearCorrectOptionClass();
         clearInterval(timerInterval.current);
+    
         if (state.currentQuestionIndex + 1 < state.numberOfQuestions) {
             const currentQuestionIndex = state.currentQuestionIndex + 1;
             const nextQuestionIndex = currentQuestionIndex + 1;
+    
+            // Update the currentQuestion and nextQuestion using the index
+            const currentQuestion = state.questions[currentQuestionIndex];
+            const nextQuestion = state.questions[nextQuestionIndex];
+    
             setState((prevState) => ({
                 ...prevState,
-                currentQuestion: prevState.questions[currentQuestionIndex],
-                nextQuestion: prevState.questions[nextQuestionIndex],
+                currentQuestion,
+                nextQuestion,
+                answer: currentQuestion.answer, // Update the answer for the new currentQuestion
                 currentQuestionIndex,
             }));
+    
             showOptions();
             handleDisableButton();
             startTimer();
@@ -102,23 +115,24 @@ const Play = (props) => {
     };
     
     
+    
 
-    const handlePreviousButtonClick = () => {
-        playButtonSound();
-        if (state.currentQuestionIndex > 0) {
-            const currentQuestionIndex = state.currentQuestionIndex - 1;
-            const previousQuestionIndex = currentQuestionIndex - 1;
-            setState((prevState) => ({
-                ...prevState,
-                currentQuestion: prevState.questions[currentQuestionIndex],
-                previousQuestion: prevState.questions[previousQuestionIndex],
-                currentQuestionIndex,
-            }));
-            showOptions();
-            handleDisableButton();
-            startTimer();
-        }
-    };
+    // const handlePreviousButtonClick = () => {
+    //     playButtonSound();
+    //     if (state.currentQuestionIndex > 0) {
+    //         const currentQuestionIndex = state.currentQuestionIndex - 1;
+    //         const previousQuestionIndex = currentQuestionIndex - 1;
+    //         setState((prevState) => ({
+    //             ...prevState,
+    //             currentQuestion: prevState.questions[currentQuestionIndex],
+    //             previousQuestion: prevState.questions[previousQuestionIndex],
+    //             currentQuestionIndex,
+    //         }));
+    //         showOptions();
+    //         handleDisableButton();
+    //         startTimer();
+    //     }
+    // };
 
 
     const handleOptionClick = (e) => {
@@ -208,9 +222,9 @@ const Play = (props) => {
                 handleNextButtonClick();
                 break;
 
-            case 'previous-button':
-                handlePreviousButtonClick();
-                break;
+            // case 'previous-button':
+            //     handlePreviousButtonClick();
+            //     break;
 
             case 'quit-button':
                 handleQuitButtonClick();
@@ -250,6 +264,11 @@ const Play = (props) => {
             classes: 'toast-invalid',
             displayLength: 1500,
         });
+        setState((prevState) => ({
+            ...prevState,
+            score: prevState.score + 1,
+            wrongAnswers: prevState.wrongAnswers + 1,
+        }));
       setTimeout(()=>{
         handleNextButtonClick();
       },3000)
@@ -367,78 +386,88 @@ const Play = (props) => {
             <Helmet>
                 <title>Quiz Page</title>
             </Helmet>
-            <div className="questions" id="questions-container" >
-            <div className="timeline"></div>
-                <h2>Quiz Mode</h2>
-                <div className="lifeline-container">
-                    <p>
-                        <span onClick={handleFiftyFifty} className="lifeline-icon">
-                        <Icon path={mdiHeartHalfFull} size={1} />
-                            <span className="lifeline">{state.fiftyFifty}</span>
-                        </span>
-                    </p>
-                    <p>
-                        <span onClick={handleHints} className="lifeline-icon">
-                        <Icon path={mdiLightbulbOn10} size={1} />
-                            <span className="lifeline">{hints}</span>
-                        </span>
-                    </p>
-                </div>
-                <div className="timer-container">
-                    <p>
-                        <span className="left" style={{ float: 'left' }}>
-                            {currentQuestionIndex + 1} of {state.numberOfQuestions}
-                        </span>
-                        </p>
-                       <p>
-                            <span
-                                className={classnames('right valid', {
-                                    warning: time.minutes <= 1,
-                                    invalid: time.minutes === 0 && time.seconds < 30,
-                                })}
-                            >
-                                {time.minutes}:{time.seconds}
-                                <Icon path={mdiClockOutline} size={1} />
-                            </span>
-                       </p>
-                   
-                </div>
-                <h5>{currentQuestion.question}</h5>
-                <div className="options-container">
-                    <p onClick={handleOptionClick} className="option">
-                        {currentQuestion.optionA}
-                    </p>
-                    <p onClick={handleOptionClick} className="option">
-                        {currentQuestion.optionB}
-                    </p>
-                </div>
-                <div className="options-container">
-                    <p onClick={handleOptionClick} className="option">
-                        {currentQuestion.optionC}
-                    </p>
-                    <p onClick={handleOptionClick} className="option">
-                        {currentQuestion.optionD}
-                    </p>
-                </div>
-
-                <div className="button-container">
-                    <button className={classnames('', { disable: state.previousButtonDisabled })} id="previous-button" onClick={handleButtonClick}>
-                        Previous
+             <div className={`quiz-div ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+                  <div className='mode' onClick={toggleMode} >
+                  {isDarkMode ? <Icon path={mdiBrightness7} size={1} style={{color:'white'}} /> :  <Icon path={mdiBrightness3} size={1} style={{color:'black'}} />}
+    
+                  </div>
+                        <div className="questions" id="questions-container" >
+                        <div className="timeline"></div>
+                            <h2>React Quiz</h2>
+                            <div className="lifeline-container">
+                                <p>
+                                    <span onClick={handleFiftyFifty} className="lifeline-icon">
+                                    <Icon path={mdiHeartHalfFull} size={1} />
+                                        <span className="lifeline">{state.fiftyFifty}</span>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span onClick={handleHints} className="lifeline-icon">
+                                    <Icon path={mdiLightbulbOn10} size={1} />
+                                        <span className="lifeline">{hints}</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div className="timer-container">
+                                <p>
+                                    <span className="left" style={{ float: 'left' }}>
+                                        {currentQuestionIndex + 1} of {state.numberOfQuestions}
+                                    </span>
+                                    </p>
+                                   <p>
+                                        <span
+                                            className={classnames('right valid', {
+                                                warning: time.minutes <= 1,
+                                                invalid: time.minutes === 0 && time.seconds < 30,
+                                            })}
+                                        >
+                                            {time.minutes}:{time.seconds}
+                                            <Icon path={mdiClockOutline} size={1} />
+                                        </span>
+                                   </p>
+                               
+                            </div>
+                            <h5>{currentQuestion.question}</h5>
+                            <div className="options-container">
+                                <p onClick={handleOptionClick} className="option">
+                                    {currentQuestion.optionA}
+                                </p>
+                                <p onClick={handleOptionClick} className="option">
+                                    {currentQuestion.optionB}
+                                </p>
+                            </div>
+                            <div className="options-container">
+                                <p onClick={handleOptionClick} className="option">
+                                    {currentQuestion.optionC}
+                                </p>
+                                <p onClick={handleOptionClick} className="option">
+                                    {currentQuestion.optionD}
+                                </p>
+                            </div>
+                            
+            
+                            <div className="button-container">
+                                {/* <button className={classnames('', { disable: state.previousButtonDisabled })} id="previous-button" onClick={handleButtonClick}>
+                                    Previous
+                                </button> */}
+                             
+                                {state.currentQuestionIndex + 1 < state.numberOfQuestions ? (
+                    <button className={classnames('', { disable: state.nextButtonDisabled })} id="next-button" onClick={handleButtonClick}>
+                        Next
                     </button>
-                    {state.currentQuestionIndex + 1 < state.numberOfQuestions ? (
-        <button className={classnames('', { disable: state.nextButtonDisabled })} id="next-button" onClick={handleButtonClick}>
-            Next
-        </button>
-    ) : (
-        <button id="end-button" onClick={endGame}>
-            End
-        </button>
-    )}
-                    <button id="quit-button" onClick={handleButtonClick}>
-                        Quit
+                ) : (
+                    <button id="end-button" onClick={endGame}>
+                        End
                     </button>
-                </div>
-            </div>
+                )}
+                                <button id="quit-button" onClick={handleButtonClick}>
+                                    Quit
+                                </button>
+                            </div>
+                        </div>
+             </div>
+              
+          
         </>
     );
 };

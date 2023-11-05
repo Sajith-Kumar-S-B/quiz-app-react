@@ -1,22 +1,22 @@
 [
     {
-        "question": "What temperature does water boil at?",
-        "optionA": "50 degrees Celcius",
-        "optionB": "25 degrees Celcius",
-        "optionC": "100 degrees Celcius",
-        "optionD": "150 degrees Celcius",
-        "answer": "100 degrees Celcius",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "What is ReactJS?",
+        "optionA": "Server side framework",
+        "optionB": "User-interface framework",
+        "optionC": "Both A and B",
+        "optionD": "None of the Above",
+        "answer": "User-interface framework",
+        "hintsMessage": "Hint: React is the view Part of MVC Architechture."
     },
 
     {
-        "question": "Who wrote Julius Caesar, Macbeth and Hamlet?",
-        "optionA": "Wole Soyinka",
-        "optionB": "William Shakespeare",
-        "optionC": "Ngozi Chimamanda Adichie",
-        "optionD": "Dan Brown",
-        "answer": "William Shakespeare",
-        "hintsMessage": "Hint: This city is known for Tower."
+        "question": "In React, what is used to change the state of a component?",
+        "optionA": "modifyState",
+        "optionB": "updateState",
+        "optionC": "setState",
+        "optionD": "changeState",
+        "answer": "setState",
+        "hintsMessage": "Hint: This function is used to update the state of a React component and trigger a re-render."
     },
 
     {

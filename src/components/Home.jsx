@@ -13,7 +13,7 @@ function Home() {
                 <div className='cube' style={{ textAlign: 'center',color:'white' }}>
                 <Icon path={mdiBalloon} size={2} />
                 </div>
-                <h1>Quiz App</h1>
+                <h1>ReactJS Quiz</h1>
                 <div className="play-button-container">
                   
                         <Link className="play-button" to="/quiz/instructions">Start Quiz</Link>

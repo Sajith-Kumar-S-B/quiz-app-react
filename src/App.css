@@ -1,0 +1,25 @@
+
+.light-mode {
+    --clr-bg: #ffffff;
+    --clr-bg-alt:#9c9cf2;
+    --clr-fg: #f8f8f8;
+    --clr-fg-alt: none;
+      --clr-primary: #a7baff;
+      --clr-lg:#000;
+      --clr-mode:#ddd;
+
+
+   
+  }
+  
+  .dark-mode {
+
+    --clr-bg: #36474f;
+    --clr-bg-alt: #18212a;
+    --clr-fg: #23283e;
+    --clr-fg-alt: #cdcdff;
+    --clr-primary: #a7baff;
+  --clr-lg:#fff;
+  --clr-mode:#36474f;
+   
+  }

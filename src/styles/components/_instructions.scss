@@ -1,42 +1,123 @@
 
-.instructions {
-    border: 1px solid darken($off-white, 10%);
-    border-radius: 5px;
-    margin-top: $lg;
-    margin-bottom: $lg;
-    padding: $sm $lg;
+.rules{
+    overflow-x: hidden;
+    background-color: var(--clr-bg);
+    width: 100%;
+    height:100vh ;
+   color: var(--clr-lg);
 
-    h1 {
-        color: $off-black;
-        font-size: $md;
-        text-align: center;
-    }
-
-    .lifeline {
+    .mode{
         position: relative;
-        top: -3px;
+        top: 0;
+       padding-top: $sm;
+        left: 5%;
+
+        
     }
 
-    .lifeline-icon {
-        color: $green;
-        cursor: pointer;
+    .mode .icon{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background-color: var(--clr-mode);
+        padding: 2px;
     }
 
-    .browser-default {
-        padding-left: 30px;
-        margin-top: 10px;
-        margin-bottom: 15px;
-    }
 
-    img {
+    .instructions {
+        border: 1px solid darken($off-white, 10%);
+        border-radius: 5px;
+        margin-top: $lg;
+        margin-bottom: $lg;
+        padding: $sm $lg;
         width: 80%;
-        height: 50%;
-    }
-} 
+        margin: $lg auto;
+        
+    
+    
+        h1 {
+            color: var(--clr-lg);
+            font-size: $md;
+            text-align: center;
+        }
+    
+        .lifeline {
+            position: relative;
+            top: -3px;
+        }
+    
+        .lifeline-icon {
+            color: $green;
+            cursor: pointer;
+        }
+    
+        .browser-default {
+            padding-left: 30px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+    
+        img {
+            width: 80%;
+            height: 50%;
+            margin: $sm auto;
+            border-radius: 10px;
+        }
+    
+        .decision{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .decision span{
+            padding:$xs $normal;
+            border-radius: $lg;
+            box-shadow: $shadow;
+    
+        }
+
+        .decision span:first-child{
+
+            background-color: #ff0000;
+
+
+        }
+
+        .decision span:last-child{
+
+            background-color: #07b907;
+
+
+        }
+    } 
+}
+
+
+
 
 @media (max-width: $md-breakpoint) {
-    .instructions img {
-        width: 100% !important;
-        height: 150% !important;
+
+    .rules{
+        height: auto;
+        .instructions{
+            width: 95%;
+            padding: $normal;
+            .instructions img {
+                width: 100% !important;
+                height: 150% !important;
+                
+            }
+
+
+            .decision span{
+                justify-content: space-between;
+                padding: 5px 10px;
+                font-size: $normal;
+
+            }
+        }
+        
     }
+   
 }
