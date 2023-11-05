@@ -15,10 +15,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Play = (props) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
-
-    const toggleMode = () => {
-      setIsDarkMode(!isDarkMode);
-    };
+    const [isOptionSelected, setIsOptionSelected] = useState(false);
+   
     const [state, setState] = useState({
         questions,
         currentQuestion: {},
@@ -72,7 +70,9 @@ const Play = (props) => {
         };
     }, []);
 
-
+    const toggleMode = () => {
+        setIsDarkMode(!isDarkMode);
+      };
     const clearCorrectOptionClass = () => {
         const options = document.querySelectorAll('.option');
         options.forEach((option) => {
@@ -87,6 +87,7 @@ const Play = (props) => {
       const handleNextButtonClick = () => {
         playButtonSound();
         clearCorrectOptionClass();
+        setIsOptionSelected(false); 
         clearInterval(timerInterval.current);
     
         if (state.currentQuestionIndex + 1 < state.numberOfQuestions) {
@@ -136,21 +137,21 @@ const Play = (props) => {
 
 
     const handleOptionClick = (e) => {
-        if (e.target.innerHTML.toLowerCase() === state.answer.toLowerCase()) {
-          
+        if (!isOptionSelected) {
+            setIsOptionSelected(true);
+    
+            if (e.target.innerHTML.toLowerCase() === state.answer.toLowerCase()) {
                 correctSound.current.play();
                 correctAnswer();
                 e.target.classList.add('correct-option');
-          
-        } else {
-           
+            } else {
                 wrongSound.current.play();
                 wrongAnswer();
                 e.target.classList.add('wrong-option');
-
-          
+            }
         }
     };
+    
 
     const handleHints = () => {
         if (state.hints > 0) {
