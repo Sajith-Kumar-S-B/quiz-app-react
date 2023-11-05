@@ -42,8 +42,8 @@
     {
         "question": "What lifecycle method is called after a component is rendered for the first time",
         "optionA": "renderComplete",
-        "optionB": " componentDidUpdate",
-        "optionC": " componentDidMount",
+        "optionB": "componentDidUpdate",
+        "optionC": "componentDidMount",
         "optionD": "componentWillMount",
         "answer": "componentDidMount",
         "hintsMessage": "Hint: Used for data fetching and setting up subscriptions in a React component."
