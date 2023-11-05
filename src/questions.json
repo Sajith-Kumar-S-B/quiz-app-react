@@ -20,132 +20,132 @@
     },
 
     {
-        "question": "What did the crocodile swallow in Peter Pan?",
-        "optionA": "A Book",
-        "optionB": "A Computer",
-        "optionC": "A pair of shoes",
-        "optionD": "Alarm Clock",
-        "answer": "Alarm Clock",
-        "hintsMessage": "Hint: This city is known for Tower."
+        "question": "What is the virtual DOM used for in React?",
+        "optionA": "Handling User Authentication",
+        "optionB": " Server-Side Rendering",
+        "optionC": "Form Validation",
+        "optionD": " Optimization",
+        "answer": " Optimization",
+        "hintsMessage": "Hint: It helps to improve the performance of React applications by minimizing DOM updates."
     },
 
     {
-        "question": "Which is the only mammal that can’t jump?",
-        "optionA": "Dog",
-        "optionB": "Elephant",
-        "optionC": "Goat",
-        "optionD": "Lion",
-        "answer": "Elephant",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "In React, what is used to pass data from a parent component to a child component?",
+        "optionA": "Data Propagation",
+        "optionB": "Data Transfer",
+        "optionC": "Data Relay",
+        "optionD": "Props",
+        "answer": "Props",
+        "hintsMessage": "Hint: Transmit data from one component to another in a unidirectional flow."
     },
 
     {
-        "question": "Who lived at 221B, Baker Street, London?",
-        "optionA": "Tony Stark",
-        "optionB": "Morgan Freeman",
-        "optionC": "Sherlock Holmes",
-        "optionD": "Samuel L. Jackson",
-        "answer": "Sherlock Holmes",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "What lifecycle method is called after a component is rendered for the first time",
+        "optionA": "renderComplete",
+        "optionB": " componentDidUpdate",
+        "optionC": " componentDidMount",
+        "optionD": "componentWillMount",
+        "answer": "componentDidMount",
+        "hintsMessage": "Hint: Used for data fetching and setting up subscriptions in a React component."
     },
 
     {
-        "question": "What colour is a panda?",
-        "optionA": "Green and Yellow",
-        "optionB": "Blue and Red",
-        "optionC": "Green and White",
-        "optionD": "Black and White",
-        "answer": "Black and White",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "What tool is used to bundle and package a React application for production?",
+        "optionA": "Reactify",
+        "optionB": "Webpack",
+        "optionC": "Rollup",
+        "optionD": "Grunt",
+        "answer": "Webpack",
+        "hintsMessage": "Hint: Popular build tool that can bundle, minify, and optimize your React application for deployment."
     },
 
     {
-        "question": "Where is the smallest bone in the human body?",
-        "optionA": "The Chest",
-        "optionB": "The Ear",
-        "optionC": "The Legs",
-        "optionD": "The Hands",
-        "answer": "The Ear",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "What JSX feature allows embedding expressions within curly braces?",
+        "optionA": "Interpolation",
+        "optionB": "Injection",
+        "optionC": "Embedding",
+        "optionD": "CurlyBracing",
+        "answer": "Interpolation",
+        "hintsMessage": "Hint: This is how dynamic values are added to JSX."
     },
 
     {
-        "question": "What does the roman numeral C represent?",
-        "optionA": "100",
-        "optionB": "10",
-        "optionC": "10,000",
-        "optionD": "1,000,000",
-        "answer": "100",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "Component primarily responsible for rendering UI elements and does not manage state?",
+        "optionA": "Functional component",
+        "optionB": "Class component",
+        "optionC": "Container component",
+        "optionD": "Higher-Order Component (HOC)",
+        "answer": "Functional component",
+        "hintsMessage": "Hint: These components are stateless."
     },
 
     {
-        "question": "What takes place in Hong Kong's Happy Valley?",
-        "optionA": "Chicken Wrestling",
-        "optionB": "Horse racing",
-        "optionC": "Street Racing",
-        "optionD": "Arm Wrestling",
-        "answer": "Horse racing",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "In one-way binding, where is the source of truth for the data?",
+        "optionA": " Child components",
+        "optionB": " Parent components",
+        "optionC": "External API",
+        "optionD": "Redux store",
+        "answer": "Parent components",
+        "hintsMessage": "Hint: In one-way binding, data flows from a central location to child components."
     },
 
     {
-        "question": "Who painted the Mona Lisa?",
-        "optionA": "Alexander Graham Bell",
-        "optionB": "Sir Isaac Newton",
-        "optionC": "Leonardo Da Vinci",
-        "optionD": "Albert Einstein",
-        "answer": "Leonardo Da Vinci",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "How many elements can a valid react component return?",
+        "optionA": "No elements",
+        "optionB": "1 Element",
+        "optionC": "More than 1 element",
+        "optionD": "None of the above",
+        "answer": "1 Element",
+        "hintsMessage": "Hint: The return value of a component's render method can only consist of a single root element. "
     },
 
     {
-        "question": "What’s the most important book in the Moslem religion?",
-        "optionA": "The Koran",
-        "optionB": "The Dictionary",
-        "optionC": "The Bible",
-        "optionD": "The Chemistry text Book",
-        "answer": "The Koran",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "Which of the following is method is not a part of ReactDOM?",
+        "optionA": "ReactDOM.hydrate()",
+        "optionB": "ReactDOM.destroy()",
+        "optionC": "ReactDOM.createPortal()",
+        "optionD": "All of the above",
+        "answer": "ReactDOM.destroy()",
+        "hintsMessage": "Hint: ReactDOM is primarily responsible for rendering and updating React components in the DOM. "
     },
 
     {
-        "question": "What’s the capital of Ethiopia?",
-        "optionA": "Cape Town",
-        "optionB": "San Francisco",
-        "optionC": "Abuja",
-        "optionD": "Syndey",
-        "answer": "Addis Ababa",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "Which of the following is used in React.js to increase performance?",
+        "optionA": "Original DOM",
+        "optionB": "Virtual DOM",
+        "optionC": "Both A and B.",
+        "optionD": "Props",
+        "answer": "Virtual DOM",
+        "hintsMessage": "Hint: This involves creating a lightweight, in-memory representation of the actual DOM. "
     },
 
     {
-        "question": "How many squares are there on a chess board?",
-        "optionA": "128",
-        "optionB": "64",
-        "optionC": "32",
-        "optionD": "256",
-        "answer": "64",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "Which of the following is a must API for every React.js component?",
+        "optionA": "SetinitialComponent",
+        "optionB": "renderComponent",
+        "optionC": "render",
+        "optionD": "All of the above",
+        "answer": "renderComponent",
+        "hintsMessage": "Hint: It is a fundamental part of every React component's lifecycle."
     },
 
     {
-        "question": "Who invented the electric light bulb?",
-        "optionA": "Tom Cruise",
-        "optionB": "Barack Obama",
-        "optionC": "Wole Soyinka",
-        "optionD": "Thomas Edison",
-        "answer": "Thomas Edison",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "Which of the following keyword is used to create a class inheritance?",
+        "optionA": "Create",
+        "optionB": "Inherits",
+        "optionC": "This",
+        "optionD": "Extends",
+        "answer": "Extends",
+        "hintsMessage": "Hint: In modern JavaScript, class inheritance is typically implemented using this keyword."
     },
 
     {
-        "question": "What are the first three words of the bible?",
-        "optionA": "be with everyone",
-        "optionB": "Again Jesus asked",
-        "optionC": "In the beginning",
-        "optionD": "At that time",
-        "answer": "In the beginning",
-        "hintsMessage": "Hint: This city is known for the Eiffel Tower."
+        "question": "How many ways of defining your variables in ES6?",
+        "optionA": "1",
+        "optionB": "3",
+        "optionC": "4",
+        "optionD": "5",
+        "answer": "3",
+        "hintsMessage": "Hint: ES6 introduced multiple ways to declare variables in JavaScript."
     }
 ]
