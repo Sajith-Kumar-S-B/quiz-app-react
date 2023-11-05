@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiCheckCircle,mdiBrightness7,mdiBrightness3  } from '@mdi/js';
+import imgCircle from '../../assets/7efs.gif'
 const QuizSummary = () => {
     const location = useLocation();
     const { state } = location;
@@ -39,7 +40,7 @@ const QuizSummary = () => {
         <div>
             <div style={{ textAlign: 'center' }}>
                 <span className="success-icon">
-                <Icon path={mdiCheckCircle} size={2} />
+               <img width={'200px'}  src={imgCircle} alt="tick" />
                 </span>
             </div>
             <h1>Quiz Completed</h1>
