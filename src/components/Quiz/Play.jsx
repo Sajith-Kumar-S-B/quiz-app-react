@@ -160,7 +160,7 @@ const Play = (props) => {
             M.toast({
                 html:  currentQuestion.hintsMessage,
                 classes: 'toast-hint',
-                displayLength: 3000,
+                displayLength:3000,
             });
     
             // Decrease the available hints by 1

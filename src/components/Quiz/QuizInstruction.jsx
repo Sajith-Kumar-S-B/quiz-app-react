@@ -3,6 +3,11 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
 import img1 from '../../assets/screenshot1.png';
+import imgblack1 from '../../assets/screenshot3.png';
+import imgblack2 from '../../assets/screenshot2.png';
+import imgblack3 from '../../assets/screenshot11.png';
+import imgblack4 from '../../assets/screenshot10.png';
+
 import img2 from '../../assets/screenshot4.png';
 import img3 from '../../assets/screenshot7.png';
 import img4 from '../../assets/screenshot8.png';
@@ -34,11 +39,11 @@ function QuizInstruction() {
                     <li>Each questions has a duration of 30sec.</li>
                     <li>
                         Every question contains 4 options.
-                        <img src={img1} alt="Quiz App options example" />
+                       {isDarkMode? <img src={imgblack1} alt="Quiz App options example" />:  <img src={img1} alt="Quiz App options example" />}
                     </li>
                     <li>
                         Select the option which best matches the answer by clicking it.
-                        <img src={img2} alt="Quiz App answer example" />
+                       {isDarkMode? <img src={imgblack2} alt="Quiz App answer example" /> :  <img src={img2} alt="Quiz App answer example" />}
                     </li>
                     <li>
                         Each game has 2 lifelines namely:
@@ -53,7 +58,7 @@ function QuizInstruction() {
                         <Icon path={mdiHeartHalfFull} size={1} />
                         </span>
                         will remove 2 wrong answers, leaving the correct answer and one wrong answer
-                        <img src={img3} alt="Quiz App Fifty-Fifty example"/>
+                      {isDarkMode? <img src={imgblack3} alt="Quiz App Fifty-Fifty example"/> : <img src={img3} alt="Quiz App Fifty-Fifty example"/>}
                     </li>
                     <li>
                         Using a hint by clicking the icon
@@ -62,7 +67,7 @@ function QuizInstruction() {
                         </span>
                         will provide a hint message tat the top.There will be total of 5 hints for the entire quiz.
                        
-                    <img src={img4} alt="Quiz App hints example" />
+                  {isDarkMode? <img src={imgblack4} alt="Quiz App hints example" /> :  <img src={img4} alt="Quiz App hints example" />}
                     </li>
                     <li>Quit the game at any time. It will lead to the home page.</li>
                     <li>The timer starts as soon as the game loads.</li>
