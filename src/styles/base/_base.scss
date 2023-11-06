@@ -77,15 +77,28 @@ body {
 
 @media (max-width: $md-breakpoint) {
  
-   body .toast-hint{
+   body {
+   
+   
+   .toast-hint{
         width: 100%;
         font-size: small;
         left:0;
         right: 0;
         padding: 0;
         text-align: left;
+        margin-top: $lg;
      }
 
+    .toast-valid{
+        margin-top: $lg;
 
+    }
+
+    .toast-invalid{
+        margin-top: $lg;
+
+    }
+   }
 }
 
