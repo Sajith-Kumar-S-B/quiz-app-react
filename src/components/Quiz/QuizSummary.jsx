@@ -34,7 +34,7 @@ const QuizSummary = () => {
    
 
     const userScore = state ? (state.numberOfQuestions === 0)
-        ? 0 : (state.score / state.numberOfQuestions) * 100 : 0;
+        ? 0 : Math.round((state.score / state.numberOfQuestions) * 100): 0;
     const remark = calculateRemark(userScore);
 
 

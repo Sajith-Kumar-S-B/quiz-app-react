@@ -59,6 +59,7 @@ const Play = (props) => {
                 nextQuestion,
                 numberOfQuestions: questions.length,
                 answer: currentQuestion.answer,
+              
             }));
             showOptions();
             handleDisableButton();
@@ -241,39 +242,44 @@ const Play = (props) => {
     };
 
     const correctAnswer = () => {
+
         M.toast({
             html: 'Correct Answer!',
             classes: 'toast-valid',
             displayLength: 1500,
         });
+    
         setState((prevState) => ({
             ...prevState,
             score: prevState.score + 1,
-            correctAnswers: prevState.correctAnswers + 1,
-        }));
-
-        setTimeout(()=>{
-            handleNextButtonClick();
-          },2000)
-      
+            correctAnswers: prevState.correctAnswers + 1
+        }), () => {
+            console.log("After correct answer increment: correctAnswers =", state.correctAnswers);
+            setTimeout(() => {
+                handleNextButtonClick();
+            }, 2000);
+        });
     };
-
+    
     const wrongAnswer = () => {
-       
         M.toast({
             html: 'Wrong Answer!',
             classes: 'toast-invalid',
             displayLength: 1500,
         });
+    
         setState((prevState) => ({
             ...prevState,
-            score: prevState.score + 1,
+            score: prevState.score,
             wrongAnswers: prevState.wrongAnswers + 1,
-        }));
-      setTimeout(()=>{
-        handleNextButtonClick();
-      },2000)
+        }), () => {
+            console.log("After wrong answer : wrongAnswers =", state.wrongAnswers);
+            setTimeout(() => {
+                handleNextButtonClick();
+            }, 2000);
+        });
     };
+    
 
     const handleQuitButtonClick = () => {
         playButtonSound();
